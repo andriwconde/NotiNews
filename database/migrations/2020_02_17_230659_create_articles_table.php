@@ -14,7 +14,7 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned();
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->longText('description');
             $table->string('excerpt',250)->nullable($value = true);
@@ -23,7 +23,7 @@ class CreateArticlesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
-        });
+          });
     }
 
     /**
@@ -33,6 +33,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('article');
     }
 }
