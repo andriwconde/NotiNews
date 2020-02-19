@@ -19,9 +19,9 @@ class CreateArticlesTable extends Migration
             $table->longText('description');
             $table->string('excerpt',250)->nullable($value = true);
             $table->string('title', 250);
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable()->default(1);
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable()->default(1);
             $table->foreign('category_id')->references('id')->on('categories');
           });
     }
@@ -32,7 +32,7 @@ class CreateArticlesTable extends Migration
      * @return void
      */
     public function down()
-    {
-        Schema::dropIfExists('article');
-    }
+      {
+        Schema::dropIfExists('article')
+      }
 }
