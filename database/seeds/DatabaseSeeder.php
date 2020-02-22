@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Faker\Generator as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         'name' => 'andres conde',
         'avatar' => 'andres conde',
         'password' => 'andres conde',
-        'email' => 'condeaibdghth4@gmail.com',
+        'email' => 'andriwconde@gmail.com',
         'type' => 'lector',
         ]);
 
