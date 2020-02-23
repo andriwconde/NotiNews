@@ -1,0 +1,15 @@
+#cuadro{
+  background-color: #FFD53B;
+  color:black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#contenido{
+  background-color: #FFA856;
+  color: black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#cartel{
+  border:0;
+}

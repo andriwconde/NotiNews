@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/inicio', 'HomeController@index')->name('inicio');
+Route::get('/inicio', 'HomeController@list');
+Route::get('/Article/create', 'ArticleController@create');
+Route::get('/Article/delete', 'ArticleController@delete');
