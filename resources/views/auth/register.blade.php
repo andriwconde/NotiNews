@@ -75,21 +75,20 @@
                             </div>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label for="inputState">{{__('Tipo de Usuario')}}</label>
-                            <select id="inputState" class="form-control" name="type">
+                        <div class="form-group col-md-6 d-flex ml-5">
+                            <label class="col-7"for="inputState">{{__('Tipo de Usuario')}}</label>
+                            <select id="inputState" class="form-control col-5" name="type">
                               <option selected>Lector</option>
                               <option>Escritor</option>
                             </select>
                           </div>
 
 
-                        <div class="form-group m-auto">
-                          <label class="ml-4"for="avatar">{{__('Foto de perfil')}}</label>
-                          <br>
-                          <div class="col-md-6 ">
-                              <input type="file" name="avatar" value="">
-                          </div>
+                        <div class="form-group d-flex justify-content-center">
+                          <label class="  mr-4"for="avatar">{{__('Foto de perfil')}}</label>
+
+                          <input type="file" name="avatar" value="">
+
                         </div>
                          <br>
 

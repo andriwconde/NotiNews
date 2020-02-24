@@ -1,10 +1,10 @@
 <?php
 
-
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Article;
 
+use Illuminate\Http\Request;
+
+use App\Article;
 class HomeController extends Controller
 {
     /**
@@ -23,11 +23,12 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-      public function index()
+      public function list()
       {
       $articulos = Article::all();
+      $vac = compact("articulos");
 
-      return view('inicio',compact('articulos'));
+      return view('inicio',$vac);
       }
 
 }

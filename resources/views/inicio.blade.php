@@ -2,18 +2,33 @@
 
 @section('content')
 
-  <div class="col-10 rounded mx-auto d-block">
-      <section class="my-4">
-        @foreach ($articles as $article)
-          <div class="col-md-4">
-            <div class="row">
-                <img src="{{ Storage::url($article->title) }}" alt="Menu">
-                <h3>{{$article->excerpt}}</h3>
-                <p class="grey-text">{{$article->description}}</p>
-            </div>
+  <div class="col-10 rounded mx-auto d-block bg-light">
+
+    <h1>Articulos del Dia</h1>
+  @foreach ($articulos as $articulo)
+    <section class="my-4 ">
+
+      <div class="articulo pb-2 pl-2 d-flex">
+        <div class="col-10">
+          <div class="titulo">
+            <h2 class="tituloMenu pl-3 pt-1">{{$articulo->title}}</h2>
           </div>
-        @endforeach
-      </section>
-  </div>
+          <div class="excerpt">
+            <h4>{{$articulo->excerpt}}</h4>
+          </div>
+        </div>
+        <div class="rating col-2">
+         <h6>Rating:{{rand(1,5)}}</h6>
+        </div>
+      </div>
+
+
+    </section>
+  @endforeach
+
+</div>
+<div class="col-10 rounded mx-auto d-block">
+  {{$articulos->links()}}
+</div>
 
         @endsection

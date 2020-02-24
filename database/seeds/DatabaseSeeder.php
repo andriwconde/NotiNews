@@ -12,18 +12,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      DB::table("users")->insert(
-        ['first_name' => 'andres',
-        'last_name' => 'conde',
-        'name' => 'andres conde',
-        'avatar' => 'andres conde',
-        'password' => 'andres conde',
-        'email' => 'andriwconde@gmail.com',
-        'type' => 'lector',
-        ]);
+      // DB::table("users")->insert(
+      //   ['first_name' => 'andres',
+      //   'last_name' => 'conde',
+      //   'name' => 'andres conde',
+      //   'avatar' => 'andres conde',
+      //   'password' => 'andres conde',
+      //   'email' => 'andriwconde@gmail.com',
+      //   'type' => 'lector',
+      //   ]);
 
           DB::table("categories")->insert(
-            ['name' => 'ultimas noticias']
+            ['name' => '']
           );
         //$this->call(UserSeeder::class);
          factory(App\Article::class, 50)->create();
