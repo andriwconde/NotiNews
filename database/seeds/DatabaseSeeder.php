@@ -22,10 +22,11 @@ class DatabaseSeeder extends Seeder
       //   'type' => 'lector',
       //   ]);
 
-          DB::table("categories")->insert(
-            ['name' => '']
-          );
+          // DB::table("categories")->insert(
+          //   ['name' => '']
+          // );
         //$this->call(UserSeeder::class);
+        // factory(App\User::class, 10)->create();
          factory(App\Article::class, 50)->create();
     }
 }

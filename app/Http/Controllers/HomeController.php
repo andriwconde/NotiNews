@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Article;
 class HomeController extends Controller
 {
@@ -22,13 +21,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-
-      public function list()
-      {
-      $articulos = Article::all();
+    public function index()
+    {
+      $articulos = Article::paginate(7);
       $vac = compact("articulos");
-
-      return view('inicio',$vac);
-      }
-
+        return view('home', $vac);
+    }
 }

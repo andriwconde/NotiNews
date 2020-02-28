@@ -10,4 +10,13 @@ class Article extends Model
  public $fillable = [
       'description','excerpt','title',
     ];
+    public function user()
+{
+    return $this->belongsTo(User::class, 'user_id');
+}
+public function category()
+{
+return $this->belongsTo(Category::class, 'category_id');
+}
+
 };

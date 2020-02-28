@@ -1,6 +1,6 @@
 <?php
-
-/*
+use App\Article;
+/*use App\Article;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/','InicioController@list');
+Route::get('/', function () {
+  $articulos = Article::paginate(7);
+  $vac = compact("articulos");
+    return view('inicio',$vac);
+});
 
 Auth::routes();
 
-Route::get('/inicio', 'HomeController@list');
-Route::get('/Article/create', 'ArticleController@create');
-Route::get('/Article/delete', 'ArticleController@delete');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/article/create', 'ArticleController@create')->middleware('Escritor');
+Route::post('/article', 'ArticleController@index');
+Route::post('/article/create', 'ArticleController@store')->middleware('Escritor');
+Route::get('/article/delete', 'ArticleController@del')->middleware('Escritor');
+Route::delete('/article/{id}', 'ArticleController@destroy')->middleware('Escritor');
+Route::get('/article/show/{id}', 'ArticleController@show');

@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/inicio.css">
     <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/show.css">
+    <link rel="stylesheet" href="css/delete.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
@@ -69,6 +71,19 @@
                                 </div>
                             </li>
                         @endguest
+                                  @auth
+                            @if (Auth::user()->type == "Escritor")
+                          <li class="nav-item dropdown mr-2">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Articulo
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="/article/create">Agregar</a>
+                                  <a class="dropdown-item" href="/article/delete">Eliminar</a>
+                            </div>
+                          </li>
+                        @endif
+                                            @endauth
                     </ul>
                 </div>
             </div>
