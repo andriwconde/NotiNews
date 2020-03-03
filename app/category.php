@@ -11,6 +11,6 @@ class category extends Model
     ];
     public function article(){
 
-    return $this->hasMany(Article::class, 'article_id');
+    return $this->hasMany(Article::class);
     }
 }

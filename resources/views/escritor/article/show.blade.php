@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="col-10 rounded mx-auto d-block bg-light" id="articulo23">
+  <div class="col-10 rounded mx-auto d-block" id="articulo23">
 
       <div class="titulo">
         <h1>{{$articulo->title}}</h1>

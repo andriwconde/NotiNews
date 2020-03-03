@@ -15,11 +15,11 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="css/registro.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/show.css">
-    <link rel="stylesheet" href="css/delete.css">
+    <link rel="stylesheet" href="/css/inicio.css">
+    <link rel="stylesheet" href="/css/registro.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/article_show.css">
+    <link rel="stylesheet" href="/css/delete.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>

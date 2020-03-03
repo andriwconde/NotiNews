@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Category;
 class HomeController extends Controller
 {
     /**
@@ -23,8 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $articulos = Article::paginate(7);
-      $vac = compact("articulos");
+      $categories  = Category::with('article')->paginate();
+
+      // dd($categories->toArray());
+
+      $vac = compact("categories");
         return view('home', $vac);
     }
 }
