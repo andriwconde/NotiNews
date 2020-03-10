@@ -10,10 +10,10 @@
     <title>{{'NotiNews'}}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet"> --}}
     <!-- Styles -->
     <link rel="stylesheet" href="/css/inicio.css">
     <link rel="stylesheet" href="/css/registro.css">
@@ -79,7 +79,6 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                   <a class="dropdown-item" href="/article/create">Agregar</a>
-                                  <a class="dropdown-item" href="/article/delete">Eliminar</a>
                             </div>
                           </li>
                         @endif

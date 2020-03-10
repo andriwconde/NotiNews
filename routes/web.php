@@ -20,7 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/article/edit/{id}', 'ArticleController@edit');
+Route::patch('/article/up/{id}', 'ArticleController@update');
 Route::get('/article/create', 'ArticleController@create')->middleware('Escritor');
 Route::post('/article', 'ArticleController@index');
 Route::post('/article/create', 'ArticleController@store')->middleware('Escritor');

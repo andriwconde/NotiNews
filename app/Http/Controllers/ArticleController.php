@@ -51,19 +51,31 @@ $vac = compact('categories');
 
         $articulo = Article::findOrFail($id);
         $articulo->delete();
-        
+
         return redirect('/home');
     }
 
 
 
-      public function del()
-          {
+    public function del()
+        {
 
-              $articulos = Article::all();
-              $vac = compact('articulos');
-              return view('escritor.article.delete', $vac);
+            $articulos = Article::all();
+            $vac = compact('articulos');
+            return view('escritor.article.delete', $vac);
 
-          }
-
+        }
+    public function edit($id)
+     {
+      $categories = Category::all();
+      $articulo = Article::findOrFail($id);
+      $vac = compact('articulo', 'categories');
+       return view('escritor.article.edit',$vac);
+     }
+     public function update(Request $request, $id)
+         {
+             $articulo = Article::findOrFail($id);
+             $articulo->update($request->all());
+             return redirect('article/show/' . $id);
+         }
 }

@@ -15,5 +15,15 @@
         <h6>{{$articulo->description}}</h6>
       </div>
 
+      <div class="nav-item dropdown mr-2">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Opciones
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/article/edit/{{$articulo->id}}">Editar</a>
+              <a class="dropdown-item" href="/article/{id}">Eliminar</a>
+        </div>
+      </div>
   </div>
+
 @endsection
