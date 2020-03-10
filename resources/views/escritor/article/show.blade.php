@@ -21,7 +21,11 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="/article/edit/{{$articulo->id}}">Editar</a>
-              <a class="dropdown-item" href="/article/{id}">Eliminar</a>
+              <form class="" action="/article/{{$articulo->id}}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit" name="button">Eliminar</button>
+              </form>
         </div>
       </div>
   </div>

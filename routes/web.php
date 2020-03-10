@@ -11,12 +11,8 @@ use App\Article;
 |
 */
 
-Route::get('/', function () {
-  $articulos = Article::paginate(7);
-  $vac = compact("articulos");
-    return view('inicio',$vac);
-});
 
+Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -13,7 +13,7 @@
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
-    {{-- <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="/css/inicio.css">
     <link rel="stylesheet" href="/css/registro.css">
