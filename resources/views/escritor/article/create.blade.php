@@ -4,7 +4,7 @@
   <form action="/article/create" enctype="multipart/form-data" method="post">
     @csrf
 
-
+<input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 
   <div class="form-group">
       <label>Titulo</label>

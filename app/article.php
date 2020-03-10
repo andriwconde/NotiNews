@@ -4,11 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\User;
+use App\category;
+
 class Article extends Model
 {
   public $table = "articles";
  public $fillable = [
-      'description','excerpt','title',
+      'description','excerpt','title','user_id'
     ];
     public function user()
 {

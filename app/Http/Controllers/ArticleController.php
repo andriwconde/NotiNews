@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Category;
+// use App\User;
 class ArticleController extends Controller
 {
   public function index(Request $request)
@@ -16,8 +17,10 @@ class ArticleController extends Controller
 
   public function show($id)
     {
-
       $articulo = Article::findOrFail($id);
+      // if(Auth::check() && Auth::user()->id === $articulo->user_id){
+      //   return $next($request);
+      // }
       $vac = compact('articulo');
       return view('escritor.article.show', $vac);
     }

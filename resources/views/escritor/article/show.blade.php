@@ -15,19 +15,24 @@
         <h6>{{$articulo->description}}</h6>
       </div>
 
-      <div class="nav-item dropdown mr-2">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      @auth
+        @if (Auth::user()->type == "Escritor" && Auth::user()->id === $articulo->user->id)
+
+        <div class="nav-item dropdown mr-2">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Opciones
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="/article/edit/{{$articulo->id}}">Editar</a>
               <form class="" action="/article/{{$articulo->id}}" method="post">
                 @csrf
                 @method('delete')
-                <button type="submit" name="button">Eliminar</button>
+                <button class="dropdown-item"type="submit" name="button">Eliminar</button>
               </form>
+          </div>
         </div>
-      </div>
+        @endif
+      @endauth
   </div>
 
 @endsection
