@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
-
+use App\Coment;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -27,6 +27,6 @@ class DatabaseSeeder extends Seeder
           // );
         //$this->call(UserSeeder::class);
         // factory(App\User::class, 10)->create();
-         factory(App\Article::class, 50)->create();
+         factory(App\Coment::class, 50)->create();
     }
 }

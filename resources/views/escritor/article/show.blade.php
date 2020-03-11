@@ -15,6 +15,7 @@
         <h6>{{$articulo->description}}</h6>
       </div>
 
+
       @auth
         @if (Auth::user()->type == "Escritor" && Auth::user()->id === $articulo->user->id)
 
@@ -34,5 +35,26 @@
         @endif
       @endauth
   </div>
+  <div class="col-10 rounded mx-auto d-block bg-info text-white">
+    <h4>{{'COMENTARIOS'}}</h4>
+    <form class="" action="" method="post">
+      @csrf
+    </form>
+    @foreach ($coments as $coment)
+        @foreach ($users as $user)
+      @if ($coment->article_id == $articulo->id && $coment->user_id == $user->id)
 
+
+        <div class="bg-success my-4">
+          <div class="">
+          <h4>{{$user->name}}</h4>
+          </div>
+          <h6>{{$coment->content}}</h6>
+
+        </div>
+
+     @endif
+     @endforeach
+    @endforeach
+</div>
 @endsection

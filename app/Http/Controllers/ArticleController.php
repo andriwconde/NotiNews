@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Coment;
+use App\user;
 use App\Category;
 // use App\User;
 class ArticleController extends Controller
@@ -11,17 +13,16 @@ class ArticleController extends Controller
   public function index(Request $request)
     {
         $articles = Article::all();
-        $vac = compact('article');
+        $vac = compact('articles',);
         return view('escritor.article.index',$vac);
     }
 
   public function show($id)
     {
+      $coments = Coment::all();
       $articulo = Article::findOrFail($id);
-      // if(Auth::check() && Auth::user()->id === $articulo->user_id){
-      //   return $next($request);
-      // }
-      $vac = compact('articulo');
+      $users = user::all();
+      $vac = compact('articulo', 'coments', 'users');
       return view('escritor.article.show', $vac);
     }
 
