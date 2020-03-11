@@ -8,7 +8,7 @@ use App\user;
 
 $factory->define(Model::class, function (Faker $faker) {
     $user = user::all();
-    return [
+    return [ 
       'file_path' => $faker->fileExtension()
     ];
 });
