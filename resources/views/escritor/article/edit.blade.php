@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <form action="/article/up/{{$articulo->id}}"  method="post">
+  <form action="/article/up/{{$articulo->id}}"  method="post" class="form p-2 col-lg-7">
     @csrf
 
     @method('patch')

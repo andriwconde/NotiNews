@@ -16,10 +16,13 @@
     <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="/css/inicio.css">
-    <link rel="stylesheet" href="/css/registro.css">
+    <link rel="stylesheet" href="/css/auth/login.css">
+    <link rel="stylesheet" href="/css/auth/registro.css">
     <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/article_show.css">
-    <link rel="stylesheet" href="/css/delete.css">
+    <link rel="stylesheet" href="/css/article/show.css">
+    <link rel="stylesheet" href="/css/article/create.css">
+    <link rel="stylesheet" href="/css/article/edit.css">
+    <link rel="stylesheet" href="/css/article/delete.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
@@ -53,6 +56,11 @@
                                 </li>
                             @endif
                         @else
+                        <!-- dropdown nombre de usuario -->
+                            <li >
+                           
+                                <img src="{{ Storage::url(Auth::user()->avatar) }}" width="40px" class="rounded-circle" >
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -71,6 +79,7 @@
                                 </div>
                             </li>
                         @endguest
+                        <!-- dropdown articulos -->
                                   @auth
                             @if (Auth::user()->type == "Escritor")
                           <li class="nav-item dropdown mr-2">

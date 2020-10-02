@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="col-10 rounded mx-auto d-block" id="articulo23">
+  <div class="col-10 rounded mx-auto d-block p-2 mb-3" id="articulo23">
 
       <div class="titulo">
         <h1>{{$articulo->title}}</h1>
@@ -35,7 +35,7 @@
         @endif
       @endauth
   </div>
-  <div class="col-10 rounded mx-auto d-block bg-info text-white">
+  <div class="col-10 rounded mx-auto d-block bg-info text-white p-2">
     <h4>{{'COMENTARIOS'}}</h4>
     <form class="" action="" method="post">
       @csrf
@@ -45,7 +45,7 @@
       @if ($coment->article_id == $articulo->id && $coment->user_id == $user->id)
 
 
-        <div class="bg-success my-4">
+        <div class="bg-success my-4 p-2 rounded">
           <div class="">
           <h4>{{$user->name}}</h4>
           </div>
