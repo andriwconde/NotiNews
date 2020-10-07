@@ -76,4 +76,17 @@ class RegisterController extends Controller
           'type' => $data['type'],
       ]);
     }
+
+    protected function patch(array $data)
+    {
+
+
+      return User::patch([
+          'first_name' => $data['first_name'],
+          'last_name' => $data['last_name'],
+          'name' => $data['name'],
+          'email' => $data['email'],
+          'avatar' => $data['avatar']->store('public/uploads'),
+      ]);
+    }
 }

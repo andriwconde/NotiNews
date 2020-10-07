@@ -16,6 +16,8 @@ Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// rutas Ariticulos
 Route::get('/article/edit/{id}', 'ArticleController@edit');
 Route::patch('/article/up/{id}', 'ArticleController@update');
 Route::get('/article/create', 'ArticleController@create')->middleware('Escritor');
@@ -24,3 +26,7 @@ Route::post('/article/create', 'ArticleController@store')->middleware('Escritor'
 Route::get('/article/delete', 'ArticleController@del')->middleware('Escritor');
 Route::delete('/article/{id}', 'ArticleController@destroy')->middleware('Escritor');
 Route::get('/article/show/{id}', 'ArticleController@show');
+
+// rutas Usuarios
+Route::patch('/user/up/{id}', 'UserController@update');
+

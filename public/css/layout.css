@@ -1,3 +1,18 @@
 #nav_bar{
     max-width: 95%;
 }
+.header-modal{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: center;
+    padding: 1rem 1rem;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+}
+.body-modal{
+    border-bottom: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+}
